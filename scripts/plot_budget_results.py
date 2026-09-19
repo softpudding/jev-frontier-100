@@ -33,8 +33,41 @@ fig.text(.06,.865,'Jev: 77.0%     |     2B + 2,048: 82.0%     |     4B + 2,048: 
 fig.legend(handles=[Patch(color=colors[b],label=label) for b,label in [('off','No thinking'),('512','512-token budget'),('2048','2,048-token budget'),('jev','Jev reference')]],loc='lower left',bbox_to_anchor=(.06,.071),ncol=4,frameon=False,fontsize=10)
 fig.text(.06,.047,'Whiskers: 95% bootstrap intervals, resampling paired templates within domains. Dashed line: Jev (77%).',fontsize=9,color='#667482')
 fig.text(.06,.025,'Exploratory task performance, not a universal intelligence ceiling or parameter-count equivalence. Uniform guessing: 25%.',fontsize=9,color='#667482')
-for ext in ['png','svg','pdf']:fig.savefig(out/f'comparison.{ext}',dpi=200)
+for ext in ['png','svg','pdf']:fig.savefig(out/f'comparison-statistical.{ext}',dpi=200)
 plt.close(fig)
+# Homepage: discrete budget conditions, with direct labels and a shared Jev reference.
+ink, muted, grid = '#192C39', '#647480', '#E8EDF0'
+series_colors = ['#82939F', '#247FA0', '#6448A3']
+fig, ax = plt.subplots(figsize=(12, 7.8))
+fig.subplots_adjust(left=.10, right=.80, top=.75, bottom=.21)
+fig.text(.07, .94, 'JF100  /  MODEL CAPABILITY', fontsize=10, fontweight='bold', color=muted)
+fig.text(.07, .875, 'Where does Jev stand?', fontsize=29, fontweight='bold', color=ink)
+fig.text(.07, .82, '100 original questions · 3 trials per condition · Qwen3.5 Q8_0', fontsize=12, color=muted)
+ax.set(xlim=(-.12, 2.30), ylim=(0, 104))
+ax.set_yticks([0, 25, 50, 75, 100], labels=['0%', '25%', '50%', '75%', '100%'])
+ax.set_xticks([0, 1, 2], labels=['Thinking off', '512 tokens', '2,048 tokens'])
+ax.tick_params(axis='both', length=0, pad=12, colors=muted)
+ax.grid(axis='y', color=grid, lw=.9, zorder=0)
+ax.set_axisbelow(True)
+ax.text(0, 1.045, 'ACCURACY', transform=ax.transAxes, fontsize=9, color=muted, fontweight='bold')
+jev = ss['jev']['accuracy'] * 100
+ax.axhline(jev, color=colors['jev'], lw=1.5, ls=(0, (5, 4)), zorder=1)
+ax.text(2.36, jev, f'Jev  {jev:.0f}%', va='center', color=colors['jev'], fontweight='bold', fontsize=13)
+for model, label, color in zip(models, ['0.8B', '2B', '4B'], series_colors):
+ values = [ss[model+' / '+b]['accuracy']*100 for b in ['off', '512', '2048']]
+ ax.plot([0, 1, 2], values, color=color, lw=2.6, marker='o', ms=8, markeredgecolor='white', markeredgewidth=1.8, zorder=3)
+ for x, value in enumerate(values):
+  # 4B/512 is close to the reference; put its label above the marker.
+  offset = -22 if label == '0.8B' else 12
+  ax.annotate(f'{value:.1f}%', (x, value), xytext=(0, offset), textcoords='offset points', ha='center', color=color, fontsize=12, fontweight='bold')
+ ax.text(2.36, values[-1], f'Qwen3.5 {label}', va='center', color=color, fontsize=12, fontweight='bold')
+fig.text(.10, .115, 'Configured thinking budget', fontsize=11, color=ink)
+fig.text(.10, .077, 'Three discrete settings; spacing does not represent equal compute. Jev uses its native API.', fontsize=9, color=muted)
+fig.text(.10, .046, 'Exploratory benchmark performance. Statistical intervals and paired comparisons are in the report.', fontsize=9, color=muted)
+for ext in ['png', 'svg', 'pdf']:
+ fig.savefig(out/f'comparison.{ext}', dpi=200)
+plt.close(fig)
+
 # Confidence curves use observed correctness, with score semantics visible.
 fig,axes=plt.subplots(1,3,figsize=(12.5,4.5),layout='constrained')
 for ax,model in zip(axes,models):

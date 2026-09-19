@@ -2,7 +2,7 @@
 
 All ten published conditions are complete: 3,000 records, 100% valid final answers. These are exploratory results from a selected release scope.
 
-![Comparison](comparison.png)
+![Comparison with 95% bootstrap intervals](comparison-statistical.png)
 
 ## Overall accuracy
 
