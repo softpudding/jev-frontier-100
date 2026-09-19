@@ -1,0 +1,33 @@
+{
+  "benchmark": "JF100",
+  "version": "0.1.0",
+  "items": 100,
+  "pairs": 50,
+  "sha256": "dd107ba90de381eaa479408492e81d7222115782e5fe601ab43986f94cd1d0fa",
+  "domains": {
+    "customer_service": 10,
+    "policy_rules": 10,
+    "discourse": 10,
+    "formal_logic": 10,
+    "relations": 10,
+    "mathematics": 10,
+    "temporal": 10,
+    "code_semantics": 10,
+    "algorithms": 10,
+    "evidence_integration": 10
+  },
+  "difficulty": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "answer_positions": {
+    "C": 25,
+    "D": 25,
+    "B": 25,
+    "A": 25
+  },
+  "created_utc": "2026-09-19",
+  "status": "frozen_before_model_evaluation",
+  "authorship": "AI-assisted original synthetic items; no independent human expert review yet"
+}

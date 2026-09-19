@@ -1,0 +1,115 @@
+{
+  "version": "0.2",
+  "dataset": {
+    "benchmark": "JF100",
+    "version": "0.1.0",
+    "items": 100,
+    "pairs": 50,
+    "sha256": "dd107ba90de381eaa479408492e81d7222115782e5fe601ab43986f94cd1d0fa",
+    "domains": {
+      "customer_service": 10,
+      "policy_rules": 10,
+      "discourse": 10,
+      "formal_logic": 10,
+      "relations": 10,
+      "mathematics": 10,
+      "temporal": 10,
+      "code_semantics": 10,
+      "algorithms": 10,
+      "evidence_integration": 10
+    },
+    "difficulty": {
+      "easy": 30,
+      "medium": 40,
+      "hard": 30
+    },
+    "answer_positions": {
+      "C": 25,
+      "D": 25,
+      "B": 25,
+      "A": 25
+    },
+    "created_utc": "2026-09-19",
+    "status": "frozen_before_model_evaluation",
+    "authorship": "AI-assisted original synthetic items; no independent human expert review yet"
+  },
+  "trials": 3,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "systems": [
+    {
+      "key": "jev",
+      "model": "jev",
+      "budget": null,
+      "file": "jev.jsonl"
+    },
+    {
+      "key": "qwen3.5:0.8b / off",
+      "model": "qwen3.5:0.8b",
+      "budget": 0,
+      "file": "qwen3.5-0.8b-0.jsonl"
+    },
+    {
+      "key": "qwen3.5:0.8b / 512",
+      "model": "qwen3.5:0.8b",
+      "budget": 512,
+      "file": "qwen3.5-0.8b-512.jsonl"
+    },
+    {
+      "key": "qwen3.5:0.8b / 2048",
+      "model": "qwen3.5:0.8b",
+      "budget": 2048,
+      "file": "qwen3.5-0.8b-2048.jsonl"
+    },
+    {
+      "key": "qwen3.5:2b-q8_0 / off",
+      "model": "qwen3.5:2b-q8_0",
+      "budget": 0,
+      "file": "qwen3.5-2b-q8_0-0.jsonl"
+    },
+    {
+      "key": "qwen3.5:2b-q8_0 / 512",
+      "model": "qwen3.5:2b-q8_0",
+      "budget": 512,
+      "file": "qwen3.5-2b-q8_0-512.jsonl"
+    },
+    {
+      "key": "qwen3.5:2b-q8_0 / 2048",
+      "model": "qwen3.5:2b-q8_0",
+      "budget": 2048,
+      "file": "qwen3.5-2b-q8_0-2048.jsonl"
+    },
+    {
+      "key": "qwen3.5:4b-q8_0 / off",
+      "model": "qwen3.5:4b-q8_0",
+      "budget": 0,
+      "file": "qwen3.5-4b-q8_0-0.jsonl"
+    },
+    {
+      "key": "qwen3.5:4b-q8_0 / 512",
+      "model": "qwen3.5:4b-q8_0",
+      "budget": 512,
+      "file": "qwen3.5-4b-q8_0-512.jsonl"
+    },
+    {
+      "key": "qwen3.5:4b-q8_0 / 2048",
+      "model": "qwen3.5:4b-q8_0",
+      "budget": 2048,
+      "file": "qwen3.5-4b-q8_0-2048.jsonl"
+    }
+  ],
+  "workers": 16,
+  "context": 32768,
+  "protocol_sha256": "31974472eeb920fb132a3947ca1f2793d02faa821ed8b10d0764951355f969df",
+  "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6",
+  "reference_run": "v0.1-main",
+  "scope": "selected complete release conditions",
+  "provenance": {
+    "source_config_sha256": "125d7c11110d5b16e74a110e4c0b2c8b040e4c33fc2f7db4e7a710354c17d412",
+    "source_protocol_sha256": "bc6d688063d2869893d605a791d4d2e943d6a5d1b5f70965fbe41a065f1d0d47",
+    "note": "Release scope was selected after observing results. All 300 trials in each published condition are retained; this release protocol is a restatement, not the original pre-run document."
+  }
+}

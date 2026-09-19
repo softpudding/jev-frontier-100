@@ -1,0 +1,5 @@
+{
+  "source_config_sha256": "125d7c11110d5b16e74a110e4c0b2c8b040e4c33fc2f7db4e7a710354c17d412",
+  "source_protocol_sha256": "bc6d688063d2869893d605a791d4d2e943d6a5d1b5f70965fbe41a065f1d0d47",
+  "note": "Release scope was selected after observing results. All 300 trials in each published condition are retained; this release protocol is a restatement, not the original pre-run document."
+}

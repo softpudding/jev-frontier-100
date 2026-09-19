@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this research-preview benchmark, cite its version and dataset SHA-256."
+title: "Jev Frontier 100: A Small Closed-Answer Capability Probe"
+type: software
+authors:
+  - name: "JF100 contributors"
+version: 0.2.0
+license: MIT
+abstract: "One hundred original synthetic text items for diagnostic comparisons of Jev and thinking language models. Not an IQ instrument or an estimate of model parameter count."

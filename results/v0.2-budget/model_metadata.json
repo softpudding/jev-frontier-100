@@ -1,0 +1,53 @@
+{
+  "qwen3.5:0.8b": {
+    "model": "qwen3.5:0.8b",
+    "blob_sha256": "afb707b6b8fac6e475acc42bc8380fc0b8d2e0e4190be5a969fbf62fcc897db5",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "873.44M",
+      "quantization_level": "Q8_0"
+    },
+    "parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95\npresence_penalty               1.5",
+    "template": "{{ .Prompt }}",
+    "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6"
+  },
+  "qwen3.5:4b-q8_0": {
+    "model": "qwen3.5:4b-q8_0",
+    "blob_sha256": "acaad28d51b81c74cae813475866f274730f97e4e687464cdd0ac369ef20032c",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q8_0"
+    },
+    "parameters": "presence_penalty               1.5\ntemperature                    1\ntop_k                          20\ntop_p                          0.95",
+    "template": "{{ .Prompt }}",
+    "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6"
+  },
+  "qwen3.5:2b-q8_0": {
+    "model": "qwen3.5:2b-q8_0",
+    "blob_sha256": "b709d81508a078a686961de6ca07a953b895d9b286c46e17f00fb267f4f2d297",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "parameters": "presence_penalty               1.5\ntemperature                    1\ntop_k                          20\ntop_p                          0.95",
+    "template": "{{ .Prompt }}",
+    "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6"
+  }
+}
