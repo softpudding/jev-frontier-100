@@ -30,8 +30,8 @@ The release exporter selects exactly the ten published conditions, verifies
 request hashes and counts, and produces `artifacts/full-records.jsonl.gz` plus a
 SHA-256 manifest. This file includes model-generated reasoning and token data,
 not model weights, environment variables, API keys or authorization headers.
-Raw artifacts are separate from Git. Their publication location should be added
-here when an actual release attachment exists; no download is claimed yet.
+Raw artifacts are separate from Git. The full 3,000-record archive and SHA-256
+manifest are available in the [v0.2.0 release](https://github.com/softpudding/jev-frontier-100/releases/tag/v0.2.0).
 
 For the public raw attachment, absolute local filesystem paths in response
 `body.model` routing metadata are replaced with the model blob filename. This

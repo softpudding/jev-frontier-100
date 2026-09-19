@@ -7,3 +7,5 @@ authors:
 version: 0.2.0
 license: MIT
 abstract: "One hundred original synthetic text items for diagnostic comparisons of Jev and thinking language models. Not an IQ instrument or an estimate of model parameter count."
+repository-code: "https://github.com/softpudding/jev-frontier-100"
+url: "https://github.com/softpudding/jev-frontier-100/releases/tag/v0.2.0"

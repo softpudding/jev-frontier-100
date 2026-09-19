@@ -104,6 +104,7 @@ Full request bodies and all response attempts, including thinking, final text,
 token IDs, bytes, logprobs and top-5 alternatives, are retained locally in
 `runs/`. They are excluded from Git because of size. `scripts/export_raw.py`
 creates a compressed, hash-checked release asset without modifying the originals.
+Download the [full 3,000-record archive](https://github.com/softpudding/jev-frontier-100/releases/download/v0.2.0/full-records.jsonl.gz) and its checksum from the [v0.2.0 release](https://github.com/softpudding/jev-frontier-100/releases/tag/v0.2.0).
 See [the data layout](docs/DATA_LAYOUT.md).
 
 The Qwen score is the raw probability of the emitted answer-letter token where

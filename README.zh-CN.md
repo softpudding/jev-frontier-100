@@ -69,7 +69,7 @@ token 数、答案字母的 LP／概率、Jev 置信度等。输入可由题集�
 
 完整输入、thinking、最终答案和所有 token 的 LP／前五候选保留在本地
 `runs/`。为避免仓库过大，不直接提交 Git；可以用 `scripts/export_raw.py`
-生成带哈希的压缩发布附件。记录结构见 [DATA_LAYOUT.md](docs/DATA_LAYOUT.md)。
+生成带哈希的压缩发布附件。完整 3,000 条记录已随 [v0.2.0 发布](https://github.com/softpudding/jev-frontier-100/releases/tag/v0.2.0)提供下载与校验清单。记录结构见 [DATA_LAYOUT.md](docs/DATA_LAYOUT.md)。
 
 Qwen 的答案 token 概率没有在 A/B/C/D 间重新归一化，不等于“答案正确率”；
 Jev 置信度的定义也不同。因此[可靠性图](results/v0.2-budget/confidence.png)和 Brier 分数
